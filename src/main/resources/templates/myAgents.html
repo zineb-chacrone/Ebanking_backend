@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Agents </title>
+</head>
+<body>
+
+<div layout:fragment="content" class="mt-4">
+    <h1 class="text-success col-md-4 offset-md-4 "> Listes des Agents </h1>
+    <a class=" btn btn-success col-md-1 " th:href="@{/addNewAgence}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+    <table class="table">
+        <tr>
+            <th>Num</th>
+            <th>Nom de l'Agent</th>
+            <th>Téléphone  </th>
+            <th>Nom de l'Agence </th>
+            <th></th>
+        </tr>
+        <tr  th:each="agent:${listAgents}">
+            <td th:text="${agent.id}"></td>
+            <td th:text="${agent.nomAgent}"></td>
+            <td th:text="${agent.telephone}"></td>
+            <td th:text="${agent.getAgence().getNomAgence()}"></td>
+
+            <td ><a  class=" btn-sm btn-primary" th:href="@{editAgent(id=${agent.id})}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                Modifer</a><a class=" btn-sm btn-danger" th:href="@{deleteAgent(id=${agent.id})}"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                Supprimer</a></td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

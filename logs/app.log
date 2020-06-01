@@ -1,0 +1,20 @@
+2020-06-01 12:49:33,606 INFO com.banque.demo.BanqueProjectApplication [main] Starting BanqueProjectApplication on user with PID 5496 (C:\Users\salah\IdeaProjects\banque-project\target\classes started by user in C:\Users\salah\IdeaProjects\banque-project)
+2020-06-01 12:49:33,610 DEBUG com.banque.demo.BanqueProjectApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-06-01 12:49:33,610 INFO com.banque.demo.BanqueProjectApplication [main] No active profile set, falling back to default profiles: default
+2020-06-01 12:49:42,451 INFO com.banque.demo.BanqueProjectApplication [main] Started BanqueProjectApplication in 9.317 seconds (JVM running for 11.128)
+2020-06-01 12:50:35,365 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-1] une agence vient d'etre créée nommée Abdel aziz idaoumahmoud par l'dmin aziz
+2020-06-01 12:51:07,688 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-2] un agent vient d'etre crée nommé :ahahi/n par l'admin :aziz
+2020-06-01 12:51:27,587 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-4] une agence vient d'etre créée nommée Saada par l'dmin aziz
+2020-06-01 12:52:01,004 DEBUG com.banque.demo.web.ControllerAgencies [http-nio-8085-exec-8] un agent nommé khadijavient d'etre créer par l'admin aziz
+2020-06-01 12:52:19,806 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-8] l'agence :Abdel aziz idaoumahmoud vient d'etre modifier  par l'admin : aziz
+2020-06-01 12:52:35,153 DEBUG com.banque.demo.web.ControllerAgencies [http-nio-8085-exec-1] l'agent :khadijavient detre supprimer par l'admin :aziz
+2020-06-01 12:52:43,650 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-7] l'agence :Abdel aziz idaoumahmoud vient d'etre supprimer  par l'admin : aziz
+2020-06-01 12:52:45,150 DEBUG com.banque.demo.web.ControllerMVC [http-nio-8085-exec-1] l'agence :Saada vient d'etre supprimer  par l'admin : aziz
+2020-06-01 12:59:05,147 INFO com.banque.demo.BanqueProjectApplication [main] Starting BanqueProjectApplication on user with PID 14812 (C:\Users\salah\IdeaProjects\banque-project\target\classes started by user in C:\Users\salah\IdeaProjects\banque-project)
+2020-06-01 12:59:05,147 DEBUG com.banque.demo.BanqueProjectApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-06-01 12:59:05,147 INFO com.banque.demo.BanqueProjectApplication [main] No active profile set, falling back to default profiles: default
+2020-06-01 12:59:16,201 INFO com.banque.demo.BanqueProjectApplication [main] Started BanqueProjectApplication in 11.56 seconds (JVM running for 13.772)
+2020-06-01 13:01:16,167 INFO com.banque.demo.BanqueProjectApplication [main] Starting BanqueProjectApplication on user with PID 15188 (C:\Users\salah\IdeaProjects\banque-project\target\classes started by user in C:\Users\salah\IdeaProjects\banque-project)
+2020-06-01 13:01:16,170 DEBUG com.banque.demo.BanqueProjectApplication [main] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-06-01 13:01:16,170 INFO com.banque.demo.BanqueProjectApplication [main] No active profile set, falling back to default profiles: default
+2020-06-01 13:01:25,804 INFO com.banque.demo.BanqueProjectApplication [main] Started BanqueProjectApplication in 10.074 seconds (JVM running for 11.689)

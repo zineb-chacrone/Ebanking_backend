@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template">
+<head>
+    <meta charset="UTF-8">
+    <title>New Agency </title>
+</head>
+<body>
+
+<div layout:fragment="content" class="mt-4 container-fluid">
+    <h1 class="text-success col-md-4 offset-md-4 "> Listes des Agences </h1>
+    <a class=" btn btn-success col-md-1 " th:href="@{/newAgency}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+
+    <div class="row col-md-10 offset-md-1">
+    <table class="table bg-white ">
+        <tr>
+            <th>Num</th>
+            <th>Nom de l'Agence</th>
+            <th>Adresse </th>
+            <th>Date de Création </th>
+            <th>Ville </th>
+            <th>Nombre des Agents </th>
+            <th> </th>
+        </tr>
+        <tr  th:each="agence:${listAgency}">
+            <td th:text="${agence.id}"></td>
+            <td th:text="${agence.nomAgence}"></td>
+            <td th:text="${agence.adresseAgence}"></td>
+            <td th:text="${agence.dateCreation}"></td>
+            <td th:text="${agence.ville}"></td>
+            <td th:text="${agence.nombreAgent}"></td>
+            <td ><a  class=" btn btn-primary" th:href="@{editAgency(id=${agence.id})}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a><a class=" btn btn-danger" th:href="@{deleteAgency(id=${agence.id})}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+
+        </tr>
+    </table>
+    </div>
+</div>
+</body>
+</html>
