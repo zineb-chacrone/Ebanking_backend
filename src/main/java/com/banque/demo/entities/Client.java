@@ -13,14 +13,10 @@ import java.util.Collection;
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor @ToString
 public class Client extends Utilisateur implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
     @Column(length = 40)
     private String nom;
     @Column(length = 40)
     private String prenom;
-    @Column(unique = true,length = 40)
-    private String email;
     @Column(unique = true,length = 40)
     private String cin;
     @Column(length = 40)
@@ -33,8 +29,6 @@ public class Client extends Utilisateur implements Serializable {
     private Collection<Virement> virements;
     @ManyToOne
     private Agence agence;
-    @ManyToOne
-    private Agent agent;
     @OneToMany(mappedBy = "client")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Message> messages;

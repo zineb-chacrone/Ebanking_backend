@@ -1,5 +1,6 @@
 package com.banque.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,5 +26,9 @@ public class Agence implements Serializable {
     private Banque banque ;
     @OneToMany(mappedBy = "agence")
     private List<Agent> agents=new ArrayList<Agent>();
+
+    @OneToMany(mappedBy="agence")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Collection<Client> clients;
 
 }

@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
 @EnableWebSecurity
@@ -30,14 +31,22 @@ auth.authenticationProvider(authenticationProvider());
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin().loginPage("/login").permitAll()
-                .and().authorizeRequests().antMatchers("/css/**").permitAll()
+                .and().csrf().disable().authorizeRequests().antMatchers("/css/**").permitAll()
                 .and().authorizeRequests().antMatchers("/js/**").permitAll()
                 .and().authorizeRequests().antMatchers("/images/**").permitAll()
-                .and().authorizeRequests().anyRequest().authenticated()
+                .and().authorizeRequests().antMatchers("/agent/**").hasRole("AGENT")
+                .antMatchers("/client/**").hasRole("CLIENT")
+                .antMatchers("/").hasRole("ADMIN")
+        .and().authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN")
+
+
+
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login");
+                .logoutSuccessUrl("/login").and().httpBasic();
+
 
     }
+
 @Bean
     DaoAuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider provider=new DaoAuthenticationProvider();

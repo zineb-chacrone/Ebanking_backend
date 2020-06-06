@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@RequestMapping("/admin")
 public class ControllerMVC {
 
     Logger logger= LoggerFactory.getLogger(ControllerMVC.class);
@@ -38,7 +39,7 @@ private IMail iMail;
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/")
+    @GetMapping("/admin")
     public String index(Model model){
         return "index";
     }
@@ -66,7 +67,7 @@ private IMail iMail;
     public String saveAgent(@ModelAttribute("agent") Agent agent,Model model,Principal principal){
         System.out.println("Aziz ");
     agent.setAgence(currentAgency);
-
+agent.setRole("AGENT");
     agent.setActivated(true);
         iMail.sendEmail(agent.getEmail(),agent.getUsername(),agent.getPassword());
     agent.setPassword(passwordEncoder.encode(agent.getPassword()));

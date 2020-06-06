@@ -17,6 +17,7 @@ import java.security.Principal;
 import java.util.List;
 
 @Controller
+@RequestMapping("/admin")
 public class ControllerAgencies {
     Logger logger= LoggerFactory.getLogger(ControllerAgencies.class);
 
@@ -46,8 +47,8 @@ public String saveNewAgent(Model model, @ModelAttribute("agent") Agent agent,
 
     Agence agence=agenceRepository.findAgenceByNomAgence(nomAgence);
     agent.setAgence(agence);
+    agent.setRole("AGENT");
     System.out.println("Nom Agence Dans l'ajout: "+nomAgence);
-
     iMail.sendEmail(agent.getEmail(),agent.getUsername(),agent.getPassword());
     agent.setPassword(passwordEncoder.encode(agent.getPassword()));
     agentRepository.save(agent);

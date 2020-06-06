@@ -10,7 +10,7 @@
 
 <div layout:fragment="content" class="mt-4">
     <h1 class="text-success col-md-4 offset-md-4 "> Listes des Agents </h1>
-    <a class=" btn btn-success col-md-1 " th:href="@{/addNewAgence}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+    <a class=" btn btn-success col-md-1 " th:href="@{/admin/addNewAgence}"><i class="fa fa-plus" aria-hidden="true"></i></a>
     <table class="table">
         <tr>
             <th>Num</th>
@@ -25,8 +25,8 @@
             <td th:text="${agent.telephone}"></td>
             <td th:text="${agent.getAgence().getNomAgence()}"></td>
 
-            <td ><a  class=" btn-sm btn-primary" th:href="@{editAgent(id=${agent.id})}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                Modifer</a><a class=" btn-sm btn-danger" th:href="@{deleteAgent(id=${agent.id})}"><i class="fa fa-trash-o" aria-hidden="true"></i>
+            <td ><a  class=" btn-sm btn-primary" th:href="@{/admin/editAgent(id=${agent.id})}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                Modifer</a><a class=" btn-sm btn-danger" th:href="@{/admin/deleteAgent(id=${agent.id})}"><i class="fa fa-trash-o" aria-hidden="true"></i>
                 Supprimer</a></td>
 
         </tr>
