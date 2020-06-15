@@ -78,7 +78,7 @@ public String deleteAgent(@RequestParam("id") Long id,Principal principal){
         agentRepository.delete(agent);
         agenceRepository.updateAgence(agence.getId(),agentRepository.findAgentByAgence(agence).size());
         logger.debug("l'agent :"+agent.getNomAgent()+"  vient detre supprimer par l'admin : "+principal.getName());
-        return "redirect:/myAgents";
+        return "redirect:/admin/myAgents";
 }
 @GetMapping("/editAgent")
     public String editAgent(@RequestParam("id") Long id,Model model){
@@ -111,7 +111,7 @@ public String deleteAgent(@RequestParam("id") Long id,Principal principal){
         agentRepository.save(oldAgent);
     logger.debug("l'agent : "+agent.getNomAgent()+" vient detre modifier par l'admin : "+principal.getName());
 
-    return "redirect:/myAgents";
+    return "redirect:/admin/myAgents";
 }
 }
 

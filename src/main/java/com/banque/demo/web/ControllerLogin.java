@@ -35,7 +35,7 @@ public class ControllerLogin {
         return "login";
     }
 
-    @GetMapping("/settings")
+    @GetMapping("admin/settings")
     public String settings(Principal principal, Model model){
 String username=principal.getName();
         System.out.println(username);
@@ -45,7 +45,7 @@ String username=principal.getName();
         model.addAttribute("admin",adminstrateur);
         return "settings";
     }
-    @PostMapping("/editAdmin")
+    @PostMapping("/admin/editAdmin")
 public String editAdmin(@ModelAttribute("admin") Adminstrateur adminstrateur,Principal principal){
         System.out.println("Hollaa Holla");
         System.out.println(adminstrateur.getPassword());

@@ -130,7 +130,7 @@ logger.debug("un agent vient d'etre crée nommé :"+agent.getNomAgent()+" par l'
         System.out.println("ID transféré : "+id);
         logger.debug("l'agence : "+agence.getNomAgence()+" vient d'etre modifier  par " +
                 "l'admin : "+principal.getName());
-        return "redirect:/myAgencies";
+        return "redirect:/admin/myAgencies";
     }
 
 }
