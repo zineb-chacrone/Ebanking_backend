@@ -56,7 +56,7 @@ public String saveNewAgent(Model model, @ModelAttribute("agent") Agent agent,
     agenceRepository.updateAgence(agence.getId(),agentRepository.findAgentByAgence(agence).size());
 logger.debug("un agent nommé "+agent.getNomAgent()+" vient d'etre créer par l'admin "+principal.getName());
 
-    return "redirect:/addNewAgence";
+    return "redirect:/admin/addNewAgence";
 
 }
 @GetMapping("/myAgents")
