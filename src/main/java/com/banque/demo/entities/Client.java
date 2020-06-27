@@ -20,6 +20,8 @@ public class Client extends Utilisateur implements Serializable {
     @Column(unique = true,length = 40)
     private String cin;
     @Column(length = 40)
+    private String phone;
+    @Column(length = 40)
     private String status="desactive";
     @OneToMany(mappedBy="client")
    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

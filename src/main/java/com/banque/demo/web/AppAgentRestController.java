@@ -3,13 +3,14 @@ package com.banque.demo.web;
 import com.banque.demo.dao.*;
 import com.banque.demo.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200",allowedHeaders = "true")
 @RestController
 public class AppAgentRestController {
     @Autowired
@@ -96,6 +97,7 @@ public class AppAgentRestController {
     }
 
     @PostMapping(value="/agent/CreerClient")
+    @ResponseStatus(HttpStatus.CREATED)
     public Client ajouterclient(@RequestBody Client client, Principal principal){
 
         String username=principal.getName();
