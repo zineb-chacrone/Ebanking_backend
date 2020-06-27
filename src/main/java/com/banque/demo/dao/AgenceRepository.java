@@ -23,4 +23,5 @@ public interface AgenceRepository extends JpaRepository<Agence,Long> {
     @Transactional
     @Query("UPDATE Agence c SET c=:agence WHERE c.id = :id")
     public int update(@Param("id") Long id, @Param("agence") Agence agence);
+
 }
